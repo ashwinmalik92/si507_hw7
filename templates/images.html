@@ -4,18 +4,26 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Name</title>
+    <title>Images</title>
 </head>
 <body>
     <h1>Hello, {{visitor_name}}!</h1>
     <h2>Today's technology headlines are..</h2>
     <table>
-        {%for headline in headlines_list%}
-        <tr>
-            <td><img src="{{headline['thumb']}}" width="500"></td>
-            <td><a href="{{headline['url']}}">{{headline['title']}}</a></td>
-        </tr>
-        {%endfor%}
+        <thead>
+            <tr>
+                <td style="border: 1px solid black;"><strong>Thumbnail</strong></td>
+                <td style="border: 1px solid black;"><strong>Title</strong></td>
+            </tr>
+        </thead>
+        <tbody>
+            {%for headline in headlines_list%}
+            <tr>
+                <td style="border: 1px solid black;"><img src="{{headline['thumb']}}" width="400"></td>
+                <td style="border: 1px solid black;"><a href="{{headline['url']}}">{{headline['title']}}</a></td>
+            </tr>
+            {%endfor%}
+        </tbody>
     </table>
 </body>
 </html>
